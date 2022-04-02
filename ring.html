@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Page</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <div>
+        <div>
+            <img src="https://banner.caratlane.com/live-images/59ff03f1cef44e2dbda85fb7064b6bd2.webp" alt="">
+        </div>
+        <div  id="select">
+            <select id="pricesort" onchange="sortByprice()">
+                <option>PRICE</option>
+                <option value="high">High To Low</option>
+                <option value="low">Low To High</option>
+            </select>
+            <select name="forma" onchange="location = this.value">
+                <option>PRODUCT TYPE</option>
+                <option value="ring.html">Rings</option>
+                <option value="bangles.html">Bangles & Bracelets</option>
+                <option value="earrings.html">EarRings</option>
+              </Select>
+            <select>
+                <option>WEIGHT RANGES</option>
+                <option value="">0 - 2 g</option>
+                <option value="">2 - 5 g</option>
+                <option value="">5 - 10 g</option>
+                <option value="">10 - 20 g</option>
+            </select>
+            <select>
+                <option>MATERIAL</option>
+                <option value="">Gold</option>
+                <option value="">Silver</option>
+                <option value="">Diamond</option>
+                <option value="">Platinum</option>
+            </select>
+            <select>
+                <option>METAL</option>
+                <option value="">18 Kt Yellow</option>
+                <option value="">18 Kt White</option>
+                <option value="">18 Kt Rose</option>
+                <option value="">18 Kt Two Tone</option>
+                <option value="">14 Kt Yellow</option>
+                <option value="">14 Kt White</option>
+                <option value="">14 Kt Rose</option>
+            </select>
+            <select>
+                <option>SEE MORE FILTERS</option>
+                <option>Ring Size</option>
+                <option>Shop For</option>
+                <option>Ring Style</option>
+                <option>Gifts</option>
+                <option>Theme</option>
+            </select>
+        </div>
+        <div id="filter">
+            <div class="moresort">
+              <button>All Rings</button>
+              <button>Try At Home</button>
+              <button>Designs in Store</button>
+              <button>Fast Delivery</button>
+            </div>
+            <div class="feat">
+              <select id="PriceSort" onchange="SortByPrice()">
+                <option>Sort By:Featured</option>
+                <option>Discount</option>
+                <option value="low">Price:Low To High</option>
+                <option value="high">Price:High To Low</option>
+                <option>Latest</option>
+                <option>Featured</option>
+              </select>
+            </div>
+            
+          </div>
+    </div>
+    <div id="container">
+    </div>
+</body>
+</html>
+<script>
+    cart=JSON.parse(localStorage.getItem("cartData")) || [];
+    wish=JSON.parse(localStorage.getItem("wishlistData")) || [];
+
+    window.addEventListener("load", function () {
+      displayData(ringData);
+    });
+    function sortByprice() {
+      var selected = document.querySelector("#pricesort").value;
+      if (selected == "high") {
+       var x= ringData.sort(function (a, b) {
+          return b.price - a.price
+        });
+        displayData(x);
+      }
+      if (selected == "low") {
+       var y= ringData.sort(function (a, b) {
+          return a.price - b.price
+       })
+       displayData(y);
+      }
+    }
+    function SortByPrice() {
+      var selected = document.querySelector("#PriceSort").value;
+      if (selected == "high") {
+       var z= ringData.sort(function (a, b) {
+          return b.price- a.price
+        });
+        displayData(z);
+      }
+      if (selected == "low") {
+       var p= ringData.sort(function (a, b) {
+          return a.price - b.price
+       });
+       displayData(p);
+      }
+    }
+
+  ringData=[{img: "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06976-1YP900_11_listfront.jpg",
+    price :58559,
+    strprice : 62230,
+    name:"Mahin Gemstone Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06977-1YP9P0_12_listhover.jpg" ,
+    price :35043,
+    strprice : 37535,
+    name:"Delicate Scallop Diamond Band"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06975-1YP9RS_12_listhover.jpg" ,
+    price :65578 ,
+    strprice :71558,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06979-1YP9P0_12_listhover.jpg" ,
+    price :29239,
+    strprice:31090,
+    name:"Yesfir Gemstone Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02845-YGP900_12_listhover.jpg",
+    price :35661,
+    strprice : 38445,
+    name:"Ilda Miracle Plate Heart Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02158-WGP900_12_listhover.jpg" ,
+    price :57718,
+    strprice :62044,
+    name:"Brilliant Petals Diamond Ring"},
+    {img: "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR00323-YGP900_12_listhover.jpg" ,
+    price :124468,
+    strprice :142342,
+    name:"Laya Twirl Diamond Ring"},
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR02626-YGP900_12_listhover.jpg" ,
+    price :37190,
+    strprice :43753,
+    name:"Cluster Finish Diamond Band"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR00152-WGP900_11_listfront.jpg",
+    price :41352,
+    strprice :44662,
+    name:"Clone Cluster Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03107-YGP900_11_listfront.jpg" ,
+    price :51538,
+    strprice :58493,
+    name:"Iris Sparkle Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05109-1YP900_11_listfront.jpg" ,
+    price :98385,
+    strprice :106355,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR01790-RGP900_11_listfront.jpg" ,
+    price :80296,
+    strprice : 85802,
+    name:"Radiating Diamond Bridal Ring Set"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05874-1YP900_11_listfront.jpg",
+    price :14760,
+    strprice :16400,
+    name:"Classic Leaves Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/R/UR00067-PT0000_11_listfront.jpg" ,
+    price :16644,
+    strprice :18493,
+    name:"Happy Waves Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR04560-RGP900_11_listfront.jpg" ,
+    price : 41179,
+    strprice : 44237,
+    name:"Artistic Floral Diamond Ring"},
+    {img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03359-WGP900_11_listfront.jpg" ,
+    price : 34927 ,
+    strprice : 38190,
+    name:"Lavinia Enhanced Shine Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR04192-YGP9EB_11_listfront.jpg",
+    price : 25036,
+    strprice : 26097,
+    name:"Cora Infinty Diamond Ring"},
+    {img: "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR04061-WRP900_11_listfront.jpg" ,
+    price :62606,
+    strprice :72743,
+    name:"Flora Clone Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03336-YGP900_11_listfront.jpg" ,
+    price :13817,
+    strprice :15552,
+    name:"Alley Twine Diamond Ring"},
+    {img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR01683-YGP900_11_listfront.jpg" ,
+    price : 18025,
+    strprice :20027,
+    name:"Nina Diamond Band"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06350-1RP900_11_listfront.jpg",
+    price :8541 ,
+    strprice :9489,
+    name:"Infinity Fore Life Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05874-1YP900_11_listfront.jpg" ,
+    price : 17553,
+    strprice :19500,
+    name:"Mesh Cluster Diamond Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05980-1RP900_11_listfront.jpg" ,
+    price : 10719,
+    strprice :11910,
+    name:"Triune Sparkle Diamond Ring"},
+    {img :"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR00152-WGP900_11_listfront.jpg" ,
+    price :72089 ,
+    strprice :77870,
+    name:"Lustre Solitaire Ring"}];
+
+    function displayData(ringData){
+      document.querySelector("#container").innerText="";
+       ringData.map(function(el){
+        var div = document.createElement("div");
+        var pic=document.createElement("div");
+        var image=document.createElement("img");
+        image.src=el.img;
+        var productprice=document.createElement("span");
+        productprice.innerText=el.price;
+        var striked=document.createElement("span");
+        striked.innerText=el.strprice;
+        striked.style.textDecoration="line-through"
+        striked.style.fontWeight="100"
+        var itemname=document.createElement("p");
+        itemname.innerText=el.name;
+        var btn1=document.createElement("button");
+        btn1.innerText="Add To Cart";
+        btn1.setAttribute("class","btn1")
+        btn1.addEventListener("click",function(){
+            cartbutton(el);
+        })
+        var btn2=document.createElement("button");
+        btn2.innerText="Add to WishList"
+        btn2.setAttribute("class","btn2")
+        btn2.addEventListener("click",function(){
+            wishbutton(el);
+        })
+        
+        pic.append(image);
+
+        div.append(pic,productprice,striked,itemname,btn1,btn2);
+        document.querySelector("#container").append(div);
+      })
+    }
+    function cartbutton(el)
+    {
+        alert("Item Added To Cart");
+        window.location.reload();
+        cart.push(el);
+        localStorage.setItem("cartData",JSON.stringify(cart));
+    }
+    function wishbutton(el)
+    {
+        alert("Item Added To WishList");
+        window.location.reload();
+        wish.push(el);
+        localStorage.setItem("wishlistData",JSON.stringify(wish));
+    }
+</script>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/24c494a6b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        body{
+        background-color:rgb(248, 247, 247)
+    }
+        .navbar {
+        background-color: white;
+        /* border: 1px solid red; */
+        position: fixed;
+        overflow: hidden;
+        height: 75px;
+        top: 0;
+        display: flex;
+        width: 100%;
+        box-shadow: 2px 2px 5px #dad1d1;
+    }
+    img{
+       border: none;   
+    }
+   .prev {
+        color: black;
+        font-size: 30px;
+        
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    #container{
+            
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            width: 30%;
+            margin: auto;
+            height:auto;
+            margin-top: 150px;
+            padding-left: 20px;
+            color: black;
+            /* border: 1px solid red; */
+        }
+        input{
+            margin-bottom: 20px;
+        }
+    #i1{
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+    #i2{
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+    #i3{
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+    #i4{
+        width: 250px;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+    #i5{
+        width: 257px;
+        height: 40px;
+        margin-bottom: 20px;
+        border: none;
+
+        border-radius: 5px;
+        background-color: #c850c0;
+        background-image: linear-gradient(59deg, #c850c0 38%, #4158d0 78%);
+        /* margin-top: 20px; */
+    }
+    #i5:hover{
+        cursor: pointer;
+        color: white;
+    }
+    #l1{
+        font-family: sans-serif;
+        font-size: 25px;
+    }
+    #l2{
+        font-family: sans-serif;
+        font-size: 25px;
+    }
+    #l3{
+        font-family: sans-serif;
+        font-size: 25px;
+    }
+    #l4{
+        font-family: sans-serif;
+        font-size: 25px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a  href="payment.html" class="prev"><i class="fa-solid fa-arrow-left"></i></a>
+         <img src="https://www.reviewsxp.com/image/CARATLANE.jpg"
+         alt=""
+         />
+     </div>
+     <div id="container">
+        <form action="" id="form">
+            <label id="l1">Cardholder Name</label>
+            <input id="i1" type="text" name="name" id="name">
+            <label id="l2">Card Number</label>
+            <input id="i2" type="number" name="cardNo" id="cardNo" placeholder="1111-1111-1111-1111">
+            <label id="l3">Expiry of Card</label>
+            <input  id="i3" type="Date" id="expiry">
+            <label id="l4"> CVV</label>
+            <input id="i4" type="number" id="cvv">
+            <input id="i5" type="submit"  name="Pay Now" id="Pay Now">
+
+        </form>
+
+    </div>
+</body>
+</html>
+<script>
+    
+document.querySelector("form").addEventListener("submit" ,checkoutFunction)
+
+// let aa=JSON.parse(localStorage.getItem("ca")) || []
+// console.log(aa)
+function checkoutFunction(){
+    event.preventDefault();
+    
+
+    let cardname=document.querySelector("#i1").value;
+
+    let cardnum=document.querySelector("#i2").value;
+    let carddate=document.querySelector("#i3").value;
+    let cv=document.querySelector("#i4").value;
+
+    console.log(cardname,cardnum,carddate,cv);
+    // console.log(cardname.length)
+   
+    if(cardname.length < 1 || cardname.length > 20){
+        alert("Enter Name Correct")
+    }
+    else if(cv.length != 3){
+        alert("Enter Correct CVV")
+    }
+    
+   else if(cardnum.length != 16){
+        alert("Enter Correct Number")
+    }
+    else{
+       alert("Payment Successfull")
+       //window.location.href="checkout.html";
+    }
+
+    var ask = window.confirm("Go to home page");
+    if (ask) {
+        // window.alert("Th");
+
+
+        window.location.href =  "homepage.html";
+       
+
+    }
+}
+</script>

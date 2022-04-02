@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <script
+      src="https://kit.fontawesome.com/24c494a6b6.js"
+      crossorigin="anonymous"
+    ></script>
+<style>
+    body{
+        background-color:rgb(248, 247, 247)
+    }
+    .navbar {
+        background-color: white;
+        /* border: 1px solid red; */
+        position: fixed;
+        overflow: hidden;
+        height: 75px;
+        top: 0;
+        display: flex;
+        width: 100%;
+        box-shadow: 2px 2px 5px #dad1d1;
+        justify-content: center;
+        justify-items: center;
+    
+    }
+     #nav1:hover{
+        cursor:pointer;
+        border-bottom: 2px solid purple;
+       
+        /* border: 1px solid red; */
+    }
+    #nav1{
+        font-family: sans-serif;
+        margin: auto;
+        font-size: 25px;
+        margin-right: 560px;
+        display: flex;
+        height: 70px;
+        margin-bottom: 60px;
+        
+
+    }
+    
+    .main-div {
+        margin-top: 75px;
+        /* border: 1px solid green; */
+        display: flex;
+        
+        
+    }
+    .leftdiv {
+        /* border: 1px solid red; */
+        width: 60%;
+        padding-top: 30px;
+        border-right: 1px solid rgb(226, 218, 218);
+        
+
+    }
+    .rightdiv {
+        /* border: 1px solid blue; */
+        width: 30%;
+        padding-top: 30px;
+        margin-left: 50px;
+        position: fixed;
+    left: 60%;
+    top:10%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+        
+    }
+    .rightchild {
+        /* border: 1px solid yellow; */
+        width: 90%;
+        height: 100%;
+        margin: auto;
+    }
+    .leftHead {
+        line-height: 2px;
+        border: 1px solid purple;
+        font-family: sans-serif;
+        border-left: 5px solid rgb(54, 54, 190);
+        border-radius: 5px;
+        padding-left: 20px;
+        width: 70%;
+        margin: auto;
+        /* border: 0.1px solid rgb(223, 215, 215); */
+    }
+   .cartlist {
+       height: 400px;
+       /* border: 1px solid black; */
+       width: 73%;
+       margin: auto;
+       margin-top: 20px;
+       
+       border-radius: 5px;
+       
+       /* overflow: scroll; */
+       height: auto;
+      
+       display: grid;
+       
+   }
+   #c1{
+       display: flex;
+       margin-left: 10px;
+   }
+   .cart{
+       font-family: sans-serif;
+       font-size: 20px;
+
+   }
+   .cart1{
+       font-family: sans-serif;
+       font-size: 20px;
+       font-weight: 400;
+       margin-top: 20px;
+   }
+
+   #p1{
+       font-size: 20px;
+       color: rgb(77, 77, 233);
+   }
+   img{
+       border: none;
+       
+   }
+   #btn1{
+    font-family: sans-serif;
+    font-size: 17px;
+    border: none;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(241, 236, 241);
+    padding-right: 65px;
+   }
+   #btn1:hover{
+    color: pink;
+    cursor: pointer;
+   }
+   #btn2{
+       font-family: sans-serif;
+       font-size: 15px;
+       border: none;
+       background-color: rgb(248, 247, 247);
+       padding-left: 20px;
+       color: rgb(161, 85, 161);
+   }
+   #btn2:hover{
+    color: pink;
+    cursor: pointer;
+   }
+   .fa-solid{
+    color: rgb(219, 128, 178);
+   }
+   #checkdelivery{
+       font-family: sans-serif;
+       font-size: 17px;
+       margin-top: 30px;
+       border: 0.1px solid rgb(223, 215, 215);
+       height: 50px;
+       width: 100%;
+       border-radius: 5px;
+    
+       
+   }
+   #p2{
+    padding-bottom: 35px;
+    padding-left: 30px;
+    
+   }
+   #p3{
+       color:blue;
+   }
+   i {
+  margin-right: 10px;
+  
+    }
+    .order{
+        /* border:1px solid red; */
+        height: 200px;
+        width: 100%;
+        border: 0.1px solid rgb(223, 215, 215);
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: white;
+    }
+    .order p{
+        font-family: sans-serif;
+        padding-left: 20px;
+    }
+    #p4{
+        display: flex;
+        justify-content:space-between;
+        padding-right: 10px;
+    }
+    #btn3{
+        border: none;
+        background-color: white;
+        color: pink;
+        font-size: 16px;
+    }
+    #btn3:hover{
+        cursor: pointer;
+    }
+    #p5{
+        display: flex;
+        justify-content:space-between;
+        padding-right: 10px;
+    }
+    #btn4{
+        border: none;
+        background-color:white;
+        color: rgb(155, 59, 155);
+        font-size: 16px;
+    }
+    #btn5{
+    font-family: sans-serif;
+    font-size: 17px;
+    border: none;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #c850c0;
+    background-image: linear-gradient(59deg, #c850c0 38%, #4158d0 78%);
+    padding-right: 65px;
+    margin-top: 20px;
+   }
+   #btn5:hover{
+    color: white;
+    cursor: pointer;
+   }
+
+   .mai {
+       display: flex;
+       padding-top: 25px;
+       height: 45px;
+       /* border: 1px solid red; */
+      
+    }
+    /* .mai:hover{
+        border-bottom:2px solid purple;
+        width: 100%;
+    } */
+    .mai1{
+        display: flex;
+        /* padding-top: 25px; */
+       
+    }
+    /* .mai1:hover{
+        border-bottom:5px solid purple;
+    } */
+
+   p{
+       font-family: sans-serif;
+   }
+   .footer {
+   /* position: fixed; */
+   /* left: 0; */
+   /* bottom: 0; */
+   width: 100%;
+   background-color:rgb(238, 229, 238);
+   color: black;
+  
+   height: 60px;
+   display: flex;
+   justify-content: space-between;
+   position: fixed;
+   bottom: 0;
+}
+#f1{
+    
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#f2{
+    margin-top:20px;
+}
+#cart2{
+    /* border:1px solid red; */
+    /* display: flex; */
+    display: flex;
+}
+.box {
+    display: flex;
+    padding-bottom: 10px;
+    border:1px solid rgb(228, 223, 223);
+    margin-bottom: 10px;
+    background-color: white;
+}
+.box1{
+    height: 150px;
+    width: 25%;
+    display: flex;
+    padding:10px 10px 10px 10px;
+    border-radius: 5px;
+    /* border:1px solid rgb(228, 223, 223); */
+    margin:15px 15px 15px 15px;
+    
+}
+.box1:hover{
+    cursor: pointer;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+.btn{
+    border:1px solid rgb(228, 223, 223);
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 100px;
+    color:rgb(158, 154, 154);
+    background-color: white;
+}
+.img1{
+    width: 200px;
+    
+}
+
+.box2{
+    
+    width: 40%;
+    display: grid;
+    /* padding:10px 10px 10px 10px; */
+    border-radius: 5px;
+    /* border:1px solid rgb(228, 223, 223); */
+    /* margin:15px 15px 15px 15px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.box3{
+    
+    width: 30%;
+    display: flex;
+    /* padding:10px 10px 10px 10px; */
+    border-radius: 5px;
+    /* border:1px solid rgb(228, 223, 223); */
+    margin:15px 15px 15px 15px;
+}
+.o1{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+#p6{
+    margin-top: -1px;
+    
+}
+.prev {
+ 
+  color: black;
+  font-size: 30px;
+  
+  margin-top: 20px;
+  margin-left: 10px;
+}
+</style>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+  </head>
+  <body>
+      
+     <div class="navbar">
+        <a  href="homepage.html" class="prev"><i class="fa-solid fa-arrow-left"></i></a>
+         <img src="https://www.reviewsxp.com/image/CARATLANE.jpg"
+         alt=""
+         />
+
+        <div id="nav1">
+            <div class="mai">
+                <i class="fa-solid fa-basket-shopping"></i>Shopping cart</div>
+            <div class="mai1"><p></p></div>
+      </div>
+     </div>
+
+     <div class="main-div">
+
+        <div class="leftdiv">
+            <div class="leftHead">
+                <p id="p1">Get ₹ 1883 xCLusive points on this order.</p>
+                <p>You can redeem these points on your next order</p>
+                <p>( 1 Point = 1 rupee ) Know More</p>
+            </div>
+
+
+            <div class="cartlist">
+                <div id="c1">
+                <div class="cart">
+                <p>
+                    Total
+                </p>
+                </div>
+                <div class="cart1"><p></p></div>
+                <div id="cart2">
+                    <div></div>
+                </div>
+            </div>
+                   
+            </div>
+        </div>
+        <div class="rightdiv">
+            <div class="rightchild">
+            <button id="btn1"><i class="fa-solid fa-tag"></i>Apply Coupon -1 Available<i class="fa-solid fa-angle-right"></i></button>
+                <!-- <div class="popup">
+
+                </div> -->
+            
+            <div id="checkdelivery"><p id="p2"><i class="fa-solid fa-truck"></i>Check delivery Date<button id="btn2">Enter Pincode</button></p>
+            
+            </div>
+            <div>
+                <P>Order Summary</P>
+                <div class="order">
+                    <p>Subtotal</p>
+                    <p>You saved</p>
+                    <p id="p4">Coupon Discount<button id="btn3">Apply Coupon</button></p>
+                    <p id="p5">Delivery Charge(Standard)<button id="btn4">FREE</button>
+                    </p>
+                    <div class="o1">Total Cost<p id="p6"></p></div>
+                </div>
+            </div>
+            <!-- <button id="btn5"><i class="fa-solid fa-lock"></i>Checkout Securely
+                
+            </button> -->
+            <button id="btn5" ><i class="fa-solid fa-lock"></i>Checkout Securely</button>
+            <!-- type="button" onclick="window.location.href = 'Payment.html'" -->
+        </div>
+        </div>
+     </div>
+     <div>      
+     </div> 
+     <div class="footer">
+        <div id="f1">Contact Us: +91-44-66075200 (Helpline) | contactus@caratlane.com</div>
+        <div id="f2">
+           
+            <i class="fa-brands fa-cc-visa"></i>
+        
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-cc-paypal"></i>
+            <i class="fa-brands fa-cc-amex"></i>
+        </div>
+      </div>
+  </body>
+  </html>
+  <script>
+     document.getElementById("btn5").onclick = function () {
+        location.href = "payment.html";
+    };
+    document.getElementById("btn1").onclick = function () {
+        location.href = "payment.html";
+    };
+
+    
+
+    var cartd=JSON.parse(localStorage.getItem("cartData")) || []
+    console.log(cartd)
+
+    var length = cartd.length;
+      console.log(length);
+
+    document.querySelector("p").innerText =`(${length})`;
+
+    var total = cartd.reduce(function (sum, elem, index, arr) {
+    return sum + Number(elem.price);
+  }, 0);
+
+  console.log(total)
+  document.querySelector(".cart1").innerText =`(${length} Items) : Rs${total}`;
+
+
+  document.querySelector("#p6").innerText =`Rs${total}`;
+
+    cartd.map(function (elem, index) {
+    var box = document.createElement("div");
+    box.setAttribute("class","box")
+    
+    var box1=document.createElement("div")
+    box1.setAttribute("class","box1")
+
+    var box2=document.createElement("div")
+    box2.setAttribute("class","box2")
+
+    var box3=document.createElement("div")
+    box3.setAttribute("class","box3")
+
+    var box4=document.createElement("div")
+    box4.setAttribute("class","box4")
+
+    var box5=document.createElement("div")
+    box5.setAttribute("class","box4")
+
+    var img = document.createElement("img");
+    img.setAttribute("class","img1")
+    img.src = elem.img;
+
+    var name = document.createElement("p");
+    name.textContent = elem.name;
+
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+
+    var btn = document.createElement("button");
+    btn.setAttribute("class","btn")
+    btn.innerText = "Remove";
+    btn.addEventListener("click", function () {
+        var result = confirm("are your sure you want to delete it!!");
+        if(result) {
+            removeItem(elem, index);
+        }
+        // removeItem(elem, index);
+    });
+
+    box1.append(img)
+    box2.append(box4,box5)
+    box3.append(btn)
+    box4.append(name)
+    box5.append(price)
+    box.append(box1,box2,box3);
+
+    document.querySelector(".cartlist").append(box);
+   
+  });
+  function removeItem(elem, index) {
+    console.log(elem, index);
+    cartd.splice(index, 1);
+    localStorage.setItem("cartData", JSON.stringify(cartd));
+    window.location.reload();
+  }
+
+ 
+
+
+  </script>

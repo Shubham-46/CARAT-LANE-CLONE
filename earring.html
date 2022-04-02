@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarRings</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<style>
+    #ear{
+        display: flex;
+    }
+    .ear{
+        width: 50%;
+    }
+</style>
+<body>
+<div>
+  <div id="ear">
+    <img class="ear" src="https://banner.caratlane.com/live-images/cd406cb7601640dab6233b01a33d197e.jpg" alt="">
+    <img class="ear" src="https://banner.caratlane.com/live-images/8e1c187cf0cc40808d894d0f2d49a125.jpg" alt="">
+  </div>
+  <div  id="select">
+    <select id="pricesort" onchange="sortByprice()">
+      <option value="">PRICE</option>
+      <option value="high">High To Low</option>
+      <option value="low">Low To High</option>
+    </select>
+    <select name="forma" onchange="location = this.value">
+      <option value="earrings.html">PRODUCT TYPE</option>
+      <option value="ring.html">Rings</option>
+      <option value="bangles.html">Bangles & Bracelets</option>
+      <option value="earrings.html">EarRings</option>
+    </Select>
+    <select>
+      <option>WEIGHT RANGES</option>
+      <option value="">0 - 2 g</option>
+      <option value="">2 - 5 g</option>
+      <option value="">5 - 10 g</option>
+      <option value="">10 - 20 g</option>
+    </select>
+    <select>
+      <option>MATERIAL</option>
+      <option value="">Gold</option>
+      <option value="">Silver</option>
+      <option value="">Diamond</option>
+      <option value="">Platinum</option>
+    </select>
+    <select>
+    <option>METAL</option>
+      <option value="">18 Kt Yellow</option>
+      <option value="">18 Kt White</option>
+      <option value="">18 Kt Rose</option>
+      <option value="">18 Kt Two Tone</option>
+      <option value="">14 Kt Yellow</option>
+      <option value="">14 Kt White</option>
+      <option value="">14 Kt Rose</option>
+    </select>
+    <select>
+      <option>SEE MORE FILTERS</option>
+      <option>Ring Size</option>
+      <option>Shop For</option>
+      <option>Ring Style</option>
+      <option>Gifts</option>
+      <option>Theme</option>
+    </select>
+  </div>
+  <div id="filter">
+    <div class="moresort">
+      <button>All Rings</button>
+      <button>Try At Home</button>
+      <button>Designs in Store</button>
+      <button>Fast Delivery</button>
+    </div>
+    <div class="feat">
+      <select id="PriceSort" onchange="SortByPrice()">
+        <option>Sort By:Featured</option>
+        <option>Discount</option>
+        <option value="low">Price:Low To High</option>
+        <option value="high">Price:High To Low</option>
+        <option>Latest</option>
+        <option>Featured</option>
+      </select>
+    </div>
+    
+  </div>
+</div>
+<div id="container">
+
+    </div>
+</body>
+</html>
+
+<script>
+Earcart=JSON.parse(localStorage.getItem("cartData")) || [] ;
+Earwish=JSON.parse(localStorage.getItem("wishlistData")) || [] ;
+
+window.addEventListener("load", function () {
+      displayData(Earrings);
+    });
+    function sortByprice() {
+      var selected = document.querySelector("#pricesort").value;
+      if (selected == "high") {
+       var x= Earrings.sort(function (a, b) {
+          return b.price- a.price
+        });
+        displayData(x);
+      }
+      if (selected == "low") {
+       var y= Earrings.sort(function (a, b) {
+          return a.price - b.price
+       });
+       displayData(y);
+      }
+    }
+    function SortByPrice() {
+      var selected = document.querySelector("#PriceSort").value;
+      if (selected == "high") {
+       var z= Earrings.sort(function (a, b) {
+          return b.price- a.price
+        });
+        displayData(z);
+      }
+      if (selected == "low") {
+       var p= Earrings.sort(function (a, b) {
+          return a.price - b.price
+       });
+       displayData(p);
+      }
+    }
+
+
+var Earrings = [
+    {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06188-1RP900_11_listfront.jpg",
+        name: "Glinting Butterfly Diamond Stud Earrings",
+        price: "₹9,191 ",
+        strikedoffprice: "₹10,211",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE01784-YGP900_11_listfront.jpg",
+        name: "Aara Swirl Diamond Stud Earrings",
+        price: "₹25,849 ",
+        strikedoffprice: "₹28,296",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04010-YGP900_11_listfront.jpg",
+        name: "Northstar Diamond Stud Earrings",
+        price: "₹14,311",
+        strikedoffprice: "₹16,836",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03935-WGP900_11_listfront.jpg",
+        name: "Fine Heart Diamond Stud Earrings",
+        price: "₹14,509",
+        strikedoffprice: "₹18,136",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE05167-1RP900_11_listfront.jpg",
+        name: "Arc Geometric Diamond Stud Earrings",
+        price: "₹17,952",
+        strikedoffprice: "₹19,946",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04425-RGP900_11_listfront.jpg",
+        name: "Floret Miracle Plate Diamond Stud Earrings",
+        price: "₹19,191",
+        strikedoffprice: "₹22,578",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06630-1YP900_11_listfront.jpg",
+        name: "Dew Cluster Diamond Drop Earrings",
+        price: "₹8,192 ",
+        strikedoffprice: "₹9,639",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02487-YGP900_11_listfront.jpg",
+        name: "Sangamini Diamond Drop Earrings",
+        price: "₹25,078 ",
+        strikedoffprice: "₹28,341",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04075-YGP900_11_listfront.jpg",
+        name: "Star Diamond Stud Earrings",
+        price: "₹15,063 ",
+        strikedoffprice: "₹18,828",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02848-YGP900_11_listfront.jpg",
+        name: "Floweret Diamond Stud Earrings",
+        price: "₹43,252 ",
+        strikedoffprice: "₹49,982",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02419-YGP900_11_listfront.jpg",
+        name: "Trio Poire Diamond Drop Earrings",
+        price: "₹23,413 ",
+        strikedoffprice: "₹25,921",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06303-1PP900_11_listfront.jpg",
+        name: "Cyra Diamond Drop Earrings",
+        price: "₹71,998 ",
+        strikedoffprice: "₹84,050",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04394-YGP9EB_11_listfront.jpg",
+        name: "Flitter Blue Butterfly Diamond Ear Cuffs",
+        price: "₹37,179",
+        strikedoffprice: "₹39,167",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06721-1YP9P0_11_listfront.jpg",
+        name: "Intertwine Circlet Pearl Drop Earrings",
+        price: "₹11,043 ",
+        strikedoffprice: "₹12,991",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04059-YGP900_11_listfront.jpg",
+        name: "Classic Leaves Diamond Stud Earrings",
+        price: "₹19,716 ",
+        strikedoffprice: "₹21,277",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06075-1YP900_11_listfront.jpg",
+        name: "Evie Detachable Diamond Stud Earrings",
+        price: "₹31,394 ",
+        strikedoffprice: "₹36,493",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE05166-1RP900_11_listfront.jpg",
+        name: "Daisy Floret Diamond Stud Earrings",
+        price: "₹13,955 ",
+        strikedoffprice: "₹14,690",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06155-1RP900_11_listfront.jpg",
+        name: "Pleasing Petals Diamond Stud Earrings",
+        price: "₹27,499 ",
+        strikedoffprice: "₹30,558",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/E/UE04382-1R00P0_11_listfront.jpg",
+        name: "Pearl Heart Stud Earrings",
+        price: "₹10,082",
+        strikedoffprice: "₹10,638",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06140-1YP900_11_listfront.jpg",
+        name: "Dancing Queen Diamond Stud Earrings",
+        price: "₹22,557",
+        strikedoffprice: "₹26,538",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03396-YGP900_11_listfront.jpg",
+        name: "Ava Intertwined Diamond Stud Earrings",
+        price: "₹25,750 ",
+        strikedoffprice: "₹27,382",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03164-YGP900_11_listfront.jpg",
+        name: "Paisley Swirl Diamond Stud Earrings",
+        price: "₹27,630",
+        strikedoffprice: "₹30,485",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE00939-PTP200_11_listfront.jpg",
+        name: "Svelte Platinum Stud Earrings",
+        price: "₹21,626",
+        strikedoffprice: "₹25,442",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02849-YGP900_11_listfront.jpg",
+        name: "Golden Floret Diamond Stud Earrings",
+        price: "₹29,271 ",
+        strikedoffprice: "₹33,839",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02426-YGP900_11_listfront.jpg",
+        name: "Sparkle Lattice Diamond Stud Earrings",
+        price: "₹30,113",
+        strikedoffprice: "₹34,151",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03360-YGP900_11_listfront.jpg",
+        name: "Catia Stardom Diamond Stud Earrings",
+        price: "₹22,609 ",
+        strikedoffprice: "₹24,169",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE05545-1RP900_11_listfront.jpg",
+        name: "Simply Knot Diamond Stud Earrings",
+        price: "₹20,046 ",
+        strikedoffprice: "₹21,943",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE04221-YGP900_11_listfront.jpg",
+        name: "Alder Root Diamond Stud Earrings",
+        price: "₹66,846 ",
+        strikedoffprice: "₹73,117",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06478-1YP9P0_11_listfront.jpg",
+        name: "Furl Love Pearl Stud Earrings",
+        price: "₹12,977",
+        strikedoffprice: "₹14,419",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03282-YGP900_11_listfront.jpg",
+        name: "Eyelet Diamond Stud Earrings",
+        price: "₹19,258 ",
+        strikedoffprice: "₹22,657",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE02428-YGP900_11_listfront.jpg",
+        name: "Antique Sun Diamond Stud Earrings",
+        price: "₹65,510",
+        strikedoffprice: "₹73,922",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06875-1YP900_11_listfront.jpg",
+        name: "Ebony Diamond Stud Earrings",
+        price: "₹29,258",
+        strikedoffprice: "₹32,011",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE03084-YGP900_11_listfront.jpg",
+        name: "Sparkle Cluster Diamond Stud Earrings",
+        price: "₹32,164",
+        strikedoffprice: "₹37,160",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06905-1RP9P0_11_listfront.jpg",
+        name: "Avisa Gemstone Drop Earrings",
+        price: "₹25,307 ",
+        strikedoffprice: "₹26,123",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE01811-YGP900_11_listfront.jpg",
+        name: "Eartha Cluster Diamond Stud Earrings",
+        price: "₹18,258 ",
+        strikedoffprice: "₹21,480",
+      },
+      {
+        img:
+          "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/E/JE06589-YGP900_11_listfront.jpg",
+        name: "Golden Hour Diamond Stud Earrings",
+        price: "₹32,941",
+        strikedoffprice: "₹36,601",
+      }];
+    
+      function displayData(Earrings){
+      document.querySelector("#container").innerText="";
+
+      Earrings.map(function(el){
+        var div = document.createElement("div");
+        var pic=document.createElement("div");
+        var image=document.createElement("img");
+        image.src=el.img;
+        var productprice=document.createElement("span");
+        productprice.innerText=el.price;
+        var striked=document.createElement("span");
+        striked.innerText=el.strikedoffprice;
+        striked.style.textDecoration="line-through"
+        striked.style.fontWeight="100"
+        var itemname=document.createElement("p");
+        itemname.innerText=el.name;
+        var btn1=document.createElement("button");
+        btn1.innerText="Add To Cart";
+        btn1.setAttribute("class","btn1")
+        btn1.addEventListener("click",function(){
+            cartbutton(el);
+        })
+        var btn2=document.createElement("button");
+        btn2.innerText="Add to WishList"
+        btn2.setAttribute("class","btn2")
+        btn2.addEventListener("click",function(){
+            wishbutton(el);
+        })
+        
+        pic.append(image);
+
+        div.append(pic,productprice,striked,itemname,btn1,btn2);
+        document.querySelector("#container").append(div);
+    })
+  }
+    function cartbutton(el)
+    {
+      alert("Item Added To Cart");
+      window.location.reload();
+      Earcart.push(el);
+      localStorage.setItem("cartData",JSON.stringify(Earcart));
+    }
+    function wishbutton(el)
+    {
+        alert("Item Added To WishList");
+        window.location.reload();
+        Earwish.push(el);
+        localStorage.setItem("wishlistData",JSON.stringify(Earwish));
+    }
+</script>

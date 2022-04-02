@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangles & Bracelets</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+<div>
+  <div>
+    <img src="https://banner.caratlane.com/live-images/dab8c9bccb50479fbad968e7ea6ea450.webp" alt="">
+  </div>
+  <div  id="select">
+    <select id="pricesort" onchange="sortByprice()">
+      <option value="">PRICE</option>
+      <option value="high">High To Low</option>
+      <option value="low">Low To High</option>
+    </select>
+    <select name="forma" onchange="location = this.value">
+      <option value="bangles.html">PRODUCT TYPE</option>
+      <option value="ring.html">Rings</option>
+      <option value="bangles.html">Bangles & Bracelets</option>
+      <option value="earrings.html">EarRings</option>
+    </Select>
+    <select>
+      <option>WEIGHT RANGES</option>
+      <option value="">0 - 2 g</option>
+      <option value="">2 - 5 g</option>
+      <option value="">5 - 10 g</option>
+      <option value="">10 - 20 g</option>
+  </select>
+    <select>
+      <option>MATERIAL</option>
+      <option value="">Gold</option>
+      <option value="">Silver</option>
+      <option value="">Diamond</option>
+      <option value="">Platinum</option>
+    </select>
+    <select>
+    <option>METAL</option>
+    <option value="">18 Kt Yellow</option>
+    <option value="">18 Kt White</option>
+    <option value="">18 Kt Rose</option>
+    <option value="">18 Kt Two Tone</option>
+    <option value="">14 Kt Yellow</option>
+    <option value="">14 Kt White</option>
+    <option value="">14 Kt Rose</option>
+    </select>
+    <select>
+      <option>SEE MORE FILTERS</option>
+      <option>Ring Size</option>
+      <option>Shop For</option>
+      <option>Ring Style</option>
+      <option>Gifts</option>
+      <option>Theme</option>
+    </select>
+  </div>
+  <div id="filter">
+    <div class="moresort">
+      <button>All Rings</button>
+      <button>Try At Home</button>
+      <button>Designs in Store</button>
+      <button>Fast Delivery</button>
+    </div>
+    <div class="feat">
+      <select  id="PriceSort" onchange="SortByPrice()">
+        <option>Sort By:Featured</option>
+        <option>Discount</option>
+        <option value="low">Price:Low To High</option>
+        <option value="high">Price:High To Low</option>
+        <option>Latest</option>
+        <option>Featured</option>
+      </select>
+    </div>
+    
+  </div>
+</div>
+<div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    cart=JSON.parse(localStorage.getItem("cartData")) || [];
+    wish=JSON.parse(localStorage.getItem("wishlistData")) || [];
+
+    window.addEventListener("load", function () {
+      displayData(BRACELETS_BANGLES_Data);
+    });
+    function sortByprice() {
+      var selected = document.querySelector("#pricesort").value;
+      if (selected == "high") {
+       var x= BRACELETS_BANGLES_Data.sort(function (a, b) {
+          return b.price- a.price
+        });
+        displayData(x);
+      }
+      if (selected == "low") {
+       var y= BRACELETS_BANGLES_Data.sort(function (a, b) {
+          return a.price - b.price
+       });
+       displayData(y);
+      }
+    }
+    function SortByPrice() {
+      var selected = document.querySelector("#PriceSort").value;
+      if (selected == "high") {
+       var z= BRACELETS_BANGLES_Data.sort(function (a, b) {
+          return b.price- a.price
+        });
+        displayData(z);
+      }
+      if (selected == "low") {
+       var p= BRACELETS_BANGLES_Data.sort(function (a, b) {
+          return a.price - b.price
+       });
+       displayData(p);
+      }
+    }
+
+
+    var BRACELETS_BANGLES_Data = [
+    { img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00867-1Y00P0_11_listfront.jpg",
+      name: "Beyond Infinity Personalised Gemstone",
+      price: 8880,
+      strikedoffprice: "₹9,250",
+    },
+    { img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01163-1RP900_11_listfront.jpg",
+      name: "Malisa Diamond Bangle",
+      price: 106781,
+      strikedoffprice:"₹1,20,037",
+    },
+    { img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01171-1YP900_11_listfront.jpg",
+      name: "Twain Heart Diamond Bracelet",
+      price: 7869,
+      strikedoffprice:"₹8,283" ,
+    },
+    { img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01162-1YP900_11_listfront.jpg",
+      name: "Khina Diamond Bangle",
+      price: 111095,
+      strikedoffprice:"₹1,18,029" ,
+    },
+    { img:"https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01059-1RP9P0_11_listfront.jpg",
+      name: "Bejeweled Pearl Bracelet",
+      price: "₹31,093 ",
+      strikedoffprice:"₹32,683" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01161-1RP900_11_listfront.jpg",
+      name: " Irsia Diamond Bangle ",
+      price: "₹1,14,465",
+      strikedoffprice:"₹1,23,795" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00292-YGP900_11_listfront.jpg",
+      name: "Peacock Feather Diamond Bracelet ",
+      price: "₹21,845 ",
+      strikedoffprice: "₹24,272",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01103-1RP900_11_listfront.jpg ",
+      name: " Blush Clover Diamond Bangle ",
+      price: "₹55,446 ",
+      strikedoffprice:"₹61,411" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00916-1RP900_11_listfront.jpg",
+      name: "Heartbeat Diamond Bracelet",
+      price: "₹15,195" ,
+      strikedoffprice:"₹17,876" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01101-1YP900_11_listfront.jpg ",
+      name: "Sparkling Orb Diamond Bangle",
+      price: "₹50,454",
+      strikedoffprice:"₹55,960" ,
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01353-1YP900_11_listfront.jpg",
+      name: "Arunima Diamond Mangalsutra Bracelet ",
+      price: "₹26,331 ",
+      strikedoffprice:"₹30,206" ,
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01142-1RP900_11_listfront.jpg",
+      name: "Daisy Mesh Diamond Bangle",
+      price: "₹94,121",
+      strikedoffprice: "₹1,01,769",
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00763-1Y0000_11_listfront.jpg",
+      name: "Flowerful Bubbles Kids' Gold Bracelet ",
+      price: "₹6,744 ",
+      strikedoffprice: "₹7,568",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01113-1RP900_11_listfront.jpg",
+      name: "Glinting Clover Diamond Bangle",
+      price: "₹52,795 ",
+      strikedoffprice: "₹58,484",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00348-YGP900_11_listfront.jpg ",
+      name: " Amita Diamond Mangalsutra Bracelet ",
+      price: "₹22,999 ",
+      strikedoffprice:"₹27,057" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01105-1YP900_11_listfront.jpg",
+      name: "Driblet Diamond Bangle",
+      price: "₹53,180",
+      strikedoffprice:"₹58,686" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00702-1Y0000_11_listfront.jpg",
+      name: " Chopper Personalised Kids' Gold Bracelet ",
+      price: "₹7,784 ",
+      strikedoffprice:"₹9,112" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB00957-YGP9NV_11_listfront.jpg",
+      name: "Classic Gemstone Bangle",
+      price: "₹70,086",
+      strikedoffprice: "₹71,391",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01053-1YP900_11_listfront.jpg ",
+      name: " Entwined Links Diamond Bracelet",
+      price: "₹28,692" ,
+      strikedoffprice:"₹32,404" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB00958-YGP9NV_11_listfront.jpg",
+      name: "Twirl Gemstone Bangle",
+      price: "₹86,085 ",
+      strikedoffprice:"₹87,390" ,
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00650-YG00P0_11_listfront.jpg ",
+      name: " Aisha Cutout Charm Pearl Bracelet ",
+      price: "₹12,347 ",
+      strikedoffprice:"₹12,687",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01102-1RP900_11_listfront.jpg",
+      name: "Floret Diamond Bangle",
+      price: "₹59,953",
+      strikedoffprice: "₹68,315",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00934-1YP900_11_listfront.jpg ",
+      name: "Aisha Diamond Mangalsutra Bracelet  ",
+      price: "₹12,453",
+      strikedoffprice:"₹14,651",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB00747-YGP900_11_listfront.jpg",
+      name: "Carol Trellis Diamond Bangle",
+      price: "₹1,98,117",
+      strikedoffprice: "₹2,29,728",
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01152-1YP900_11_listfront.jpg ",
+      name: " Get Dancin' Diamond Bracelet ",
+      price: "₹65,945",
+      strikedoffprice: "₹67,474",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01157-1YP900_11_listfront.jpg",
+      name: "Gina Diamond Bangle",
+      price: "₹48,870 ",
+      strikedoffprice:"₹54,906" ,
+    },
+    {
+      img:
+        " https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01187-1YP9P0_11_listfront.jpg  ",
+      name: "Inaaya Diamond Mangalsutra Bracelet  ",
+      price: "₹32,562 " ,
+      strikedoffprice:"₹34,102" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01156-1RP900_11_listfront.jpg ",
+      name: "Ovya Diamond Bangle",
+      price: "₹53,447 ",
+      strikedoffprice:"₹60,687" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00724-RGP900_11_listfront.jpg",
+      name: "Quad Diamond Adjustable Bracelet",
+      price: "₹32,075 ",
+      strikedoffprice: "₹33,299",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01116-WYP900_11_listfront.jpg",
+      name: "Glorious Orb Diamond Bangle",
+      price: "₹81,035 ",
+      strikedoffprice:"₹88,744" ,
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00334-YG00PW_11_listfront.jpg",
+      name: "Pearl Station Bracelet",
+      price: "₹16,123" ,
+      strikedo0ffprice:"₹16,493",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01152-1YP900_11_listfront.jpg",
+      name: "Fara Diamond Bangle",
+      price: "₹57,862 ",
+      strikedoffprice: "₹65,653",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT01061-1YP9RS_11_listfront.jpg",
+      name: "Charming Cherry Gemstone Bracelet",
+      price: "₹28,189 ",
+      strikedoffprice:"₹30,025",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB01155-1YP900_11_listfront.jpg",
+      name: "Saarya Diamond Bangle",
+      price: "₹65,714",
+      strikedoffprice: "₹74,668",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/T/UT00045-YG0000_11_listfront.jpg ",
+      name: " Lydia Cutout Gold Bracelet",
+      price: "₹20,318",
+      strikedoffprice:"₹21,024",
+    },
+    {
+      img:
+        "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/B/JB00779-YGP900_11_listfront.jpg",
+      name: "Glenda Textured Diamond Bangle",
+      price: "₹1,22,804",
+      strikedoffprice: "₹1,33,205",
+    }];
+   
+    function displayData(BRACELETS_BANGLES_Data){
+      document.querySelector("#container").innerText="";
+
+     BRACELETS_BANGLES_Data.map(function(el){
+        var div = document.createElement("div");
+        var pic=document.createElement("div");
+        var image=document.createElement("img");
+        image.src=el.img;
+        var productprice=document.createElement("span");
+        productprice.innerText=el.price;
+        var striked=document.createElement("span");
+        striked.innerText=el.strikedoffprice;
+        striked.style.textDecoration="line-through"
+        striked.style.fontWeight="100"
+        var itemname=document.createElement("p");
+        itemname.innerText=el.name;
+        var btn1=document.createElement("button");
+        btn1.innerText="Add To Cart";
+        btn1.setAttribute("class","btn1")
+        btn1.addEventListener("click",function(){
+            cartbutton(el);
+        })
+        var btn2=document.createElement("button");
+        btn2.innerText="Add to WishList"
+        btn2.setAttribute("class","btn2")
+        btn2.addEventListener("click",function(){
+            wishbutton(el);
+        })
+        
+        pic.append(image);
+
+        div.append(pic,productprice,striked,itemname,btn1,btn2);
+        document.querySelector("#container").append(div);
+    })
+  }
+    function cartbutton(el)
+    {
+      alert("Item Added To Cart");
+      window.location.reload();
+      cart.push(el);
+      localStorage.setItem("cartData",JSON.stringify(cart));
+    }
+    function wishbutton(el)
+    {
+        alert("Item Added To WishList");
+        window.location.reload();
+        wish.push(el);
+        localStorage.setItem("wishlistData",JSON.stringify(wish));
+    }
+
+</script>

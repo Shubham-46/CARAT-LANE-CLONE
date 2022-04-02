@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Mulish:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="signup.css">
+    <!-- <script src="signup.js"></script> -->
+    <style>
+   
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h3 class="hr-sect" id="head">Sign Up with CaratLane</h3>
+      <p id="use">USING</p>
+      <button class="social facebook">
+        <a id="goog" href="https://www.facebook.com/" target="_blank"
+          >Facebook</a
+        >
+      </button>
+      <button class="social googlee">
+        <a id="goog" href="https://accounts.google.com/" target="_blank"
+          >Google</a
+        >
+      </button>
+      <p id="use">OR</p>
+      <p class="subhead">Enter Email</p>
+      <input class="blkin" type="email" id="mail" />
+      <div id="namebox">
+        <div>
+          <p class="subhead first">First Name</p>
+          <input class="blkin" type="text" id="firstname" />
+        </div>
+        <div>
+          <p class="subhead first">Last Name</p>
+          <input class="blkin" type="text" id="lastname" />
+        </div>
+      </div>
+      <p class="subhead">Enter Password</p>
+      <input class="blkin" type="password" id="enterpass" />
+      <p class="subhead">Confirm Password</p>
+      <input class="blkin" type="password" id="confirmpass" />
+      <p class="subhead">Select Gender</p>
+      <select placeholder="Gender" id="gender">
+        <option value="" disabled selected hidden>Gender</option>
+        <option class="opt" value="Male">Male</option>
+        <option class="opt" value="Female">Female</option>
+      </select>
+      <div id="namebox">
+        <div>
+          <p class="subhead first">ISD Code</p>
+          <select name="" id="isd">
+            <option value="" disabled selected hidden></option>
+            <option class="opt" value="91">+91</option>
+            <option class="opt" value="44">+44</option>
+            <option class="opt" value="61">+61</option>
+          </select>
+        </div>
+        <div>
+          <p class="subhead first">Mobile Number</p>
+          <input class="blkin" type="number" id="mobile" />
+        </div>
+      </div>
+      <div class="google connect">
+        <input id="check" type="checkbox" />
+        <label>Opt for WhatsApp Updates on mobile number</label>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHq-vaUK8MlOy8sPlCE5cHlSF9w7jUJ6YDQ&usqp=CAU"
+          alt=""
+        />
+      </div>
+      <button id="reg">Register to Continue</button>
+      <div id="last">
+        <div>Already have an account?</div>
+        <div><a id="log" href="login.html">Log In!</a></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#reg").addEventListener("click", register);
+var signup = JSON.parse(localStorage.getItem("signUpData")) || [];
+
+function register() {
+  //Code to create the object of signUp Data
+  var obj = {
+    email: document.querySelector("#mail").value,
+    firstName: document.querySelector("#firstname").value,
+    lastName: document.querySelector("#lastname").value,
+    enterPass: document.querySelector("#enterpass").value,
+    confirmPass: document.querySelector("#confirmpass").value,
+    gender: document.querySelector("#gender").value,
+    mobile: document.querySelector("#mobile").value,
+  };
+
+  // Code to check the matching passwords
+  var enter = document.querySelector("#enterpass");
+  var confirm = document.querySelector("#confirmpass");
+  if (enter.value != confirm.value) {
+    alert("Passwords do not match!!");
+    document.querySelector("#enterpass").value = "";
+    document.querySelector("#confirmpass").value = "";
+    return;
+  }
+
+  //Code to check the length of mobile number
+  if (mobile.value.length != 10) {
+    alert("Invalid Mobile Number!!");
+    document.querySelector("#mobile").value = "";
+    return;
+  }
+
+  signup.push(obj);
+  localStorage.setItem("signUpData", JSON.stringify(signup));
+
+  //Code to make all the inputs empty after clicking on registration
+  document.querySelector("#mail").value = "";
+  document.querySelector("#firstname").value = "";
+  document.querySelector("#lastname").value = "";
+  document.querySelector("#enterpass").value = "";
+  document.querySelector("#confirmpass").value = "";
+  document.querySelector("#gender").value = "";
+  document.querySelector("#mobile").value = "";
+}
+</script>
+
