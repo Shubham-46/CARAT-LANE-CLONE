@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In Page</title>
+
+    <style>
+      #container {
+        height: auto;
+        width: 25%;
+        margin: auto;
+        margin-top: 30px;
+      }
+
+      .hr-sect {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.35);
+        margin: 8px 0px;
+      }
+      .hr-sect::before,
+      .hr-sect::after {
+        content: "";
+        flex-grow: 1;
+        background: rgba(131, 131, 131, 0.35);
+        height: 1.2px;
+        font-size: 0px;
+        line-height: 0px;
+        margin: 0px 8px;
+      }
+
+      #head {
+        font-weight: 400;
+        color: black;
+        font-size: 23px;
+      }
+
+      #use {
+        text-align: center;
+        color: rgb(168, 168, 168);
+        font-size: 13px;
+        margin-top: 30px;
+      }
+
+      .social {
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        width: 96%;
+        padding: 15px;
+        display: block;
+        border-radius: 5px;
+        color: rgb(145, 145, 145);
+        border: none;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .facebook {
+        background: #f0f0f0
+          url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-cRaRj4QWiJoiCC8xv1D1XWlXANNWNKiuw&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: 12px 12px;
+      }
+
+      .googlee {
+        background: #f0f0f0
+          url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhwFXc0_kkWCXzk1xUiYZbiMEGg89f60qq6Q&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: 12px 12px;
+      }
+
+      input {
+        height: 20px;
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        width: 90%;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+        border: 0.5px solid rgba(185, 183, 183, 0.35);
+        color: rgb(19, 19, 19);
+        font-size: 16px;
+      }
+
+      .subhead {
+        font-size: 11px;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+      }
+
+      .blkin {
+        margin-top: -8px;
+      }
+
+      #reg {
+        height: 45px;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+        width: 96%;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        font-size: 14px;
+        background-color: #c850c0;
+        background-image: linear-gradient(59deg, #c850c0 38%, #4158d0 78%);
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button + div {
+        margin-top: 20px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        font-family: arial;
+        margin-bottom: 20px;
+      }
+
+      #last > div:nth-child(2) {
+        color: rgb(108, 10, 153);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      #sign {
+        text-decoration: none;
+      }
+
+      #goog {
+        text-decoration: none;
+        color: rgb(145, 145, 145);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h3 class="hr-sect" id="head">Log In to CaratLane</h3>
+      <p id="use">USING</p>
+      <button class="social facebook">
+        <a id="goog" href="https://www.facebook.com/" target="_blank"
+          >Facebook</a
+        >
+      </button>
+      <button class="social googlee">
+        <a id="goog" href="https://accounts.google.com/" target="_blank"
+          >Google</a
+        >
+      </button>
+      <p id="use">OR</p>
+      <p class="subhead">Enter Email</p>
+      <input class="blkin" type="email" id="mail" />
+      <p class="subhead">Enter Password</p>
+      <input class="blkin" type="password" id="pass" />
+      <button id="reg">Log In to Continue</button>
+      <div id="last">
+        <div>New to Caratlane?</div>
+        <div><a id="sign" href="signup.html">Create an account</a></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
+
+<script>
+  var stored = JSON.parse(localStorage.getItem("signUpData"));
+
+  document.querySelector("#reg").addEventListener("click", loginchek);
+
+  function loginchek() {
+    var email = document.querySelector("#mail").value;
+    var password = document.querySelector("#pass").value;
+   
+    var flag1 = false; 
+    var flag2 = false;
+    
+    for (var i = 0; i < stored.length; i++) {
+      // console.log(stored[i]);
+      if (stored[i].email === email && stored[i].enterPass === password){
+        flag1 = true;
+        flag2 = true;
+      }
+    }
+    
+    if ( flag1 == true && flag2 == true )
+      {
+        alert("Login Successful");
+        window.location.href = "homepage.html";
+      } else {
+          alert("Login Failed!");
+      }
+  }
+  
+
+</script>
