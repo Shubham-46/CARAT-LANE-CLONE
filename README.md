@@ -62,4 +62,7 @@ Clone the project
 - Ratnesh Kumar
 - Jogi Saikiran
 
+## CaratLane Clone Blog link
+
+[CLick here for the Blog link](https://medium.com/@aakarsh604/caratlane-website-cloning-466ea06a68c4)
 
